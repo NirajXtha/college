@@ -22,6 +22,12 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+
+                intent.putExtra("id", 101);
+                intent.putExtra("name", "Niraj Shrestha");
+                intent.putExtra("age", 21);
+                intent.putExtra("address", "Kathmandu");
+
                 startActivity(intent);
             }
         });

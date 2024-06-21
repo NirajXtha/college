@@ -15,7 +15,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="20dp"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/goBackBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Data from previous activity"
+        android:id="@+id/contentTv"
+        android:textSize="15dp"
+        tools:ignore="HardcodedText" />
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Show Content"
+        android:id="@+id/showBtn"
+        app:layout_constraintTop_toTopOf="@+id/contentTv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/goBackBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="15dp"
         android:textStyle="bold"
         />
     <Button
