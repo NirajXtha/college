@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Form Example</string>
+    <string name="nameEnter">Please Enter your name</string>
+
+    <string-array name="academics">
+        <item>BCA</item>
+        <item>BBA</item>
+        <item>BIM</item>
+        <item>BBE</item>
+        <item>BCSIT</item>
+        <item>BBS</item>
+    </string-array>
+</resources>
