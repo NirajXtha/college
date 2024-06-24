@@ -29,11 +29,12 @@ public class HomeActivity extends AppCompatActivity {
         String name = i.getStringExtra("name");
         int age = i.getIntExtra("age", 0);
         String address = i.getStringExtra("address");
-
+        String academics = i.getStringExtra("academics");
         String result = "\nId: " + id +
                 "\nName: " + name +
                 "\nAge: " + age +
-                "\nAddress: " + address;
+                "\nAddress: " + address +
+                "\nAcademics: " + academics;
 
         showBtn.setOnClickListener(new View.OnClickListener() {
             @Override

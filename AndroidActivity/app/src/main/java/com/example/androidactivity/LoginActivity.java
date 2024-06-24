@@ -27,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
                 intent.putExtra("name", "Niraj Shrestha");
                 intent.putExtra("age", 21);
                 intent.putExtra("address", "Kathmandu");
+                intent.putExtra("academics","BCA");
 
                 startActivity(intent);
             }
