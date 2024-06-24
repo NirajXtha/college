@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Lab_Two</string>
+
+    <string-array name="programs">
+        <item>BCA</item>
+        <item>BBA</item>
+        <item>BSCIT</item>
+        <item>BBS</item>
+        <item>BBE</item>
+    </string-array>
+</resources>
