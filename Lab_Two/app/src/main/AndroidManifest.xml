@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Lab_Two"
         tools:targetApi="31">
         <activity
+            android:name=".FormResult"
+            android:exported="false" />
+        <activity
             android:name=".StudentForm"
             android:exported="true">
             <intent-filter>
