@@ -30,9 +30,20 @@ public class StudentForm extends AppCompatActivity {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String gender
+                String genderSelected = "Unknown";
+                if(genderMale.isChecked()){
+                    genderSelected = "Male";
+                }if(genderFemale.isChecked()){
+                    genderSelected = "Female";
+                }
                 Intent intent = new Intent(StudentForm.this, FormResult.class);
 
+                intent.putExtra("id",stdId.getText().toString());
+                intent.putExtra("name", stdName.getText().toString());
+                intent.putExtra("gender", genderSelected);
+                intent.putExtra("program", program.getSelectedItem().toString());
+
+                startActivity(intent);
             }
         });
     }
