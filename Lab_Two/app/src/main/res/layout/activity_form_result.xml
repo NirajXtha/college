@@ -6,18 +6,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context=".FormResult">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:textSize="25sp"
-        android:text="Result:"/>
+        android:textSize="45sp"
+        android:fontFamily="cursive"
+        android:text="Result"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textSize="20sp"
+        android:fontFamily="monospace"
         android:id="@+id/result"
+        android:gravity="center"
+        android:text="test"
         />
 </LinearLayout>
