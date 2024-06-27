@@ -4,13 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FirstFragment"
-    android:background="#FFFED3"
+    android:background="#6320EE"
     android:layout_gravity="center">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
+        android:orientation="vertical"
         tools:ignore="UselessParent">
         <TextView
             android:layout_width="wrap_content"
@@ -19,5 +20,31 @@
             android:textSize="25sp"
             android:textStyle="bold"
             android:textColor="@color/black"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/firstNum"
+            android:hint="Enter First Number"
+            android:layout_marginTop="20dp"
+            android:inputType="number"
+            android:textColor="@color/black"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/secondNum"
+            android:hint="Enter Second Number"
+            android:inputType="number"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/addBtn"
+            android:text="Add"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_500"
+            />
     </LinearLayout>
 </FrameLayout>
