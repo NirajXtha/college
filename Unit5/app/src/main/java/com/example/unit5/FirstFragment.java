@@ -27,9 +27,9 @@ public class FirstFragment extends Fragment {
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double num1 = Double.parseDouble(firstNum.getText().toString());
-                double num2 = Double.parseDouble(secondNum.getText().toString());
-                double result = num1 + num2;
+                int num1 = Integer.parseInt(firstNum.getText().toString());
+                int num2 = Integer.parseInt(secondNum.getText().toString());
+                int result = num1 + num2;
                 Snackbar.make(v,"The final value is: " + result,Snackbar.LENGTH_SHORT).show();
             }
         });
