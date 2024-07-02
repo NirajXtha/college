@@ -3,11 +3,15 @@ package com.example.tablayout;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.viewpager2.widget.ViewPager2;
+
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,5 +30,15 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager.setAdapter(new ViewPageAdapter(this));
 
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
+
+        TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(tabLayout, viewPager, true,
+                new TabLayoutMediator.TabConfigurationStrategy() {
+                    @Override
+                    public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+                        tab.setText("Tab" + (position + 1));
+                    }
+                });
+                tabLayoutMediator.attach();
     }
 }
