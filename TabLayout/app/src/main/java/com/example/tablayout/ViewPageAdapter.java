@@ -20,9 +20,9 @@ public class ViewPageAdapter extends FragmentStateAdapter {
                 return new SecondFragment();
             case 2:
                 return new ThirdFragment();
-            default:
-                return null;
+
         }
+        return new FirstFragment();
     }
 
     @Override
