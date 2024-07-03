@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Menu</string>
+    <string name="item_1">Item 1</string>
+    <string name="item_2">Item 2</string>
+    <string name="item_3">Item 3</string>
+    <string name="show_context_menu">Show Context Menu</string>
+    <string name="popupMenu">PopUp Menu</string>
+    <string name="dialog_button">Dialog Button</string>
+
+</resources>
