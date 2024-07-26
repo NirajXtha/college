@@ -4,32 +4,41 @@ import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.snackbar.Snackbar;
+
+import java.util.ArrayList;
+
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
     public static class ViewHolder extends RecyclerView.ViewHolder{
         TextView nameTv, emailTv;
+        ImageView imageView;
+        Button btn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             nameTv = itemView.findViewById(R.id.nameTv);
             emailTv = itemView.findViewById(R.id.emailTv);
+            imageView = itemView.findViewById(R.id.imageView);
+            btn = itemView.findViewById(R.id.btn);
         }
     }
 
     Activity activity;
-    String[]  names;
-    String[] emails;
-    int[] images;
+//    String[]  names;
+//    String[] emails;
+//    int[] images;
+    ArrayList<DataModel> dataModels;
 
-    public MyRecyclerViewAdapter(Activity activity, String[] names, String[] emails, int[] images){
+    public MyRecyclerViewAdapter(Activity activity, ArrayList<DataModel> dataModels){
         this.activity = activity;
-        this.names = names;
-        this.emails = emails;
-        this.images = images;
+        this.dataModels = dataModels;
     }
 
     @NonNull
@@ -45,12 +54,25 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     public void onBindViewHolder(@NonNull ViewHolder holder, int p) {
         int position = holder.getAdapterPosition();
 
-        holder.nameTv.setText(names[position]);
-        holder.emailTv.setText(emails[position]);
+        holder.nameTv.setText(dataModels.get(position).getName());
+        holder.emailTv.setText(dataModels.get(position).getEmail());
+        holder.imageView.setImageResource(dataModels.get(position).getImage());
+
+        holder.btn.setOnClickListener(v->{
+
+        });
+
+//        holder.nameTv.setText(names[position]);
+//        holder.emailTv.setText(emails[position]);
+//        holder.imageView.setImageResource(images[position]);
+//
+        holder.btn.setOnClickListener(v ->{
+            Snackbar.make(v, "The name is: " + dataModels.get(position).getName() + "\nThe email is: " + dataModels.get(position).getEmail(), Snackbar.LENGTH_SHORT).show();
+        });
     }
 
     @Override
     public int getItemCount() {
-        return names.length;
+        return dataModels.size();
     }
 }

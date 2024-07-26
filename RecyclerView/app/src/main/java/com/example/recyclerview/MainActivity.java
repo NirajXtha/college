@@ -1,6 +1,10 @@
 package com.example.recyclerview;
 
 import android.os.Bundle;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +13,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,16 +29,22 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        EditText name = findViewById(R.id.name);
+        EditText email = findViewById(R.id.email);
+        Button addBtn = findViewById(R.id.addBtn);
+
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
-        String[] names = {"Ram", "Shyam", "Hari", "Geeta", "Neha", "Niraj", "Adam"};
-        String[] emails = {"abc@gmail.com", "def@gmail.com", "ghi@gmail.com", "jkl@gmail.com", "abc@gmail.com", "abc@gmail.com", "abc@gmail.com"};
-        int[] images = {R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground};
+        ArrayList<DataModel> dataModels = new ArrayList<>();
+        addBtn.setOnClickListener(v->{
+            dataModels.add(new DataModel(name.getText().toString(), email.getText().toString(), R.drawable.ic_launcher_foreground));
+            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+            recyclerView.setLayoutManager(layoutManager);
 
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+            MyRecyclerViewAdapter adapter = new MyRecyclerViewAdapter(this, dataModels);
+            recyclerView.setAdapter(adapter);
+        });
 
-        RecyclerView.Adapter adapter = new MyRecyclerViewAdapter(this, names, emails, images);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
+
     }
 }
