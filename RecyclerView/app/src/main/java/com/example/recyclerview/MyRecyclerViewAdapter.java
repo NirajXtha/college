@@ -58,10 +58,6 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         holder.emailTv.setText(dataModels.get(position).getEmail());
         holder.imageView.setImageResource(dataModels.get(position).getImage());
 
-        holder.btn.setOnClickListener(v->{
-
-        });
-
 //        holder.nameTv.setText(names[position]);
 //        holder.emailTv.setText(emails[position]);
 //        holder.imageView.setImageResource(images[position]);

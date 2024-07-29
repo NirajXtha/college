@@ -13,24 +13,20 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <EditText
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:hint="Name"
-            android:id="@+id/name"/>
-        <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Email"
-            android:id="@+id/email"/>
+            android:hint="Name"
+            android:id="@+id/name"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:id="@+id/addBtn"/>
 
     </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add"
-        android:id="@+id/addBtn"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

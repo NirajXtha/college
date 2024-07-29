@@ -30,21 +30,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
         EditText name = findViewById(R.id.name);
-        EditText email = findViewById(R.id.email);
         Button addBtn = findViewById(R.id.addBtn);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
         ArrayList<DataModel> dataModels = new ArrayList<>();
         addBtn.setOnClickListener(v->{
-            dataModels.add(new DataModel(name.getText().toString(), email.getText().toString(), R.drawable.ic_launcher_foreground));
+            dataModels.add(new DataModel(name.getText().toString(), "example@abc.com", R.drawable.ic_launcher_foreground));
             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
             recyclerView.setLayoutManager(layoutManager);
 
             MyRecyclerViewAdapter adapter = new MyRecyclerViewAdapter(this, dataModels);
             recyclerView.setAdapter(adapter);
         });
-
-
     }
 }
