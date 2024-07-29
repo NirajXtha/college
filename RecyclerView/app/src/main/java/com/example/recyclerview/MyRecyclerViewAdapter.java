@@ -71,4 +71,9 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     public int getItemCount() {
         return dataModels.size();
     }
+
+    public void AddItem(DataModel newData){
+        dataModels.add(newData);
+        notifyDataSetChanged();
+    }
 }

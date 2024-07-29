@@ -35,13 +35,19 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
         ArrayList<DataModel> dataModels = new ArrayList<>();
-        addBtn.setOnClickListener(v->{
-            dataModels.add(new DataModel(name.getText().toString(), "example@abc.com", R.drawable.ic_launcher_foreground));
-            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-            recyclerView.setLayoutManager(layoutManager);
+        //dataModels.add(new DataModel(name.getText().toString(), "example@abc.com", R.drawable.ic_launcher_foreground));
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
 
-            MyRecyclerViewAdapter adapter = new MyRecyclerViewAdapter(this, dataModels);
-            recyclerView.setAdapter(adapter);
+        MyRecyclerViewAdapter adapter = new MyRecyclerViewAdapter(this, dataModels);
+        recyclerView.setAdapter(adapter);
+
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                adapter.AddItem(new DataModel(name.getText().toString(), "example@abc.com", R.drawable.ic_launcher_foreground));
+                name.clearFocus();
+            }
         });
     }
 }
