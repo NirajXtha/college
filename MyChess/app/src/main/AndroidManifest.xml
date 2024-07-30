@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MyChess"
         tools:targetApi="31">
         <activity
+            android:name=".Chess"
+            android:exported="false" />
+        <activity
             android:name=".Board"
             android:exported="false" />
         <activity

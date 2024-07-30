@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">MyChess</string>
-    <string name="play">Play Game</string>
+    <string name="play">Play as Guest</string>
     <string name="load_game">Load Game</string>
     <string name="settings">Settings</string>
+    <string name="draw">Draw?</string>
+    <string name="resign">Resign</string>
+    <string name="draw_">Draw</string>
+    <string name="undo">Undo</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="client_id">885505585428-ti37l1nhh1obj78etfvtfrpu44v352cd.apps.googleusercontent.com</string>
 </resources>
