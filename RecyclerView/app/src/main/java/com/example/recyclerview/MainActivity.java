@@ -30,7 +30,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         EditText name = findViewById(R.id.name);
+        EditText email = findViewById(R.id.email);
+
         Button addBtn = findViewById(R.id.addBtn);
+        Button addImage = findViewById(R.id.imageBtn);
+
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
@@ -45,8 +49,9 @@ public class MainActivity extends AppCompatActivity {
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                adapter.AddItem(new DataModel(name.getText().toString(), "example@abc.com", R.drawable.ic_launcher_foreground));
+                adapter.AddItem(new DataModel(name.getText().toString(), email.getText().toString(), R.drawable.ic_launcher_foreground));
                 name.clearFocus();
+                email.clearFocus();
             }
         });
     }

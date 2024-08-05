@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.lab3_age_calculator"
+    namespace = "com.example.example"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.lab3_age_calculator"
+        applicationId = "com.example.example"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -19,7 +19,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -34,7 +37,6 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    implementation("joda-time:joda-time:2.9.1")
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

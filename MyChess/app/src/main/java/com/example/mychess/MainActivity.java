@@ -3,6 +3,7 @@ package com.example.mychess;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -49,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
     GoogleApiClient mGoogleApiClient;
     Button play, signOutBtn;
     TextView username, email;
+//    private String android_id = Settings.Secure.getString(getContext().getContentResolver(),
+//            Settings.Secure.ANDROID_ID);
     private final ActivityResultLauncher<Intent> activityResultLauncher =
             registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
                 @Override
@@ -111,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // ~ signout ~
         signOutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
                                     email.setVisibility(View.GONE);
                                     signInButton.setVisibility(View.VISIBLE);
                                     signOutBtn.setVisibility(View.GONE);
+                                    profilePic.setImageResource(R.mipmap.ic_launcher);
                                     Toast.makeText(MainActivity.this, "Signed out Successfully!", Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(MainActivity.this, MainActivity.class));
                                 }
