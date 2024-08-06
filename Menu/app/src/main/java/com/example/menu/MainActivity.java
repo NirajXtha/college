@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == R.id.item1){
-            Snackbar.make(findViewById(R.id.main), "Selected: Item 1", Snackbar.LENGTH_LONG).show();
+            Snackbar.make(findViewById(R.id.main), "Selected: " + item.getTitle(), Snackbar.LENGTH_LONG).show();
             return true;
         }else if(item.getItemId() == R.id.item2){
             Snackbar.make(findViewById(R.id.main), "Selected: Item 2", Snackbar.LENGTH_LONG).show();

@@ -24,7 +24,7 @@ public class MyGridAdapter extends ArrayAdapter<com.example.grid.MyDataModel> {
 
     @NonNull
     @Override
-    public View getView(int position, @NonNull View convertView, @NonNull ViewGroup parent) {
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
         View rowView = inflater.inflate(R.layout.custom_list, null, true);
 
@@ -36,7 +36,7 @@ public class MyGridAdapter extends ArrayAdapter<com.example.grid.MyDataModel> {
         com.example.grid.MyDataModel dataModel = dataModels.get(position);
 
         // Update the views with the data
-        imageView.setImageResource(R.drawable.ic_launcher_foreground); // Update with your own image
+        imageView.setImageResource(R.mipmap.ic_launcher_round); // Update with your own image
         titleTextView.setText(dataModel.getTitle());
         descTextView.setText(dataModel.getDescription());
         dateTextView.setText(dataModel.getDate());

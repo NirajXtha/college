@@ -47,7 +47,7 @@ public class FormOneActivity extends AppCompatActivity {
                     String selectedGender = "Unknown Gender, maybe even gay";
                     if(maleRb.isChecked()){
                         selectedGender = "Male";
-                    }else{
+                    }if(femaleRb.isChecked()){
                         selectedGender = "Female";
                     }
                     String enteredPhone = phoneEt.getText().toString();
