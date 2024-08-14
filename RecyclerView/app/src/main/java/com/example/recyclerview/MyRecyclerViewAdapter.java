@@ -1,6 +1,7 @@
 package com.example.recyclerview;
 
 import android.app.Activity;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
     public static class ViewHolder extends RecyclerView.ViewHolder{
@@ -34,6 +36,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 //    String[]  names;
 //    String[] emails;
 //    int[] images;
+private List<Uri> mediaList;
     ArrayList<DataModel> dataModels;
 
     public MyRecyclerViewAdapter(Activity activity, ArrayList<DataModel> dataModels){
@@ -56,7 +59,12 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
         holder.nameTv.setText(dataModels.get(position).getName());
         holder.emailTv.setText(dataModels.get(position).getEmail());
-        holder.imageView.setImageResource(dataModels.get(position).getImage());
+        if(dataModels.get(position).getImage() == 0){
+            holder.imageView.setImageURI(dataModels.get(position).getImageUri());
+        }else{
+            holder.imageView.setImageResource(dataModels.get(position).getImage());
+        }
+
 
 //        holder.nameTv.setText(names[position]);
 //        holder.emailTv.setText(emails[position]);

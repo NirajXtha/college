@@ -1,23 +1,22 @@
 package com.example.recyclerview;
 
-import android.app.Activity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import android.net.Uri;
 
 public class DataModel {
     String name;
     String email;
-    int image;
+    int image = 0;
+    Uri imageUri;
     public DataModel(String name, String email, int image) {
         this.name = name;
         this.email = email;
         this.image = image;
+    }
+
+    public DataModel(String name, String email, Uri imageUri){
+        this.name = name;
+        this.email = email;
+        this.imageUri = imageUri;
     }
 
     public String getName(){
@@ -31,5 +30,6 @@ public class DataModel {
     public int getImage(){
         return image;
     }
+    public Uri getImageUri(){ return imageUri; }
 
 }
