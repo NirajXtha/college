@@ -12,21 +12,21 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter ID"
+        android:hint="@string/id"
         android:id="@+id/id"
         android:layout_marginVertical="10dp"
         android:inputType="number"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Name"
+        android:hint="@string/name"
         android:id="@+id/name"
         android:layout_marginVertical="10dp" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/address"
-        android:hint="Enter Address"
+        android:hint="@string/add"
         android:layout_marginVertical="10dp"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,7 +36,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Select"
+            android:text="@string/select"
             android:id="@+id/select"/>
         <Button
             android:layout_width="0dp"
@@ -62,9 +62,12 @@
             android:text="Delete"
             android:id="@+id/delete"/>
     </LinearLayout>
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/resultTv"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/recycleView"
+        android:scrollbars="vertical"
+        />
 
 </LinearLayout>

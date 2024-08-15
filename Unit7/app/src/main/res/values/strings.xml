@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Unit7</string>
+    <string name="id">Enter ID</string>
+    <string name="name">Enter Name</string>
+    <string name="add">Enter Address</string>
+    <string name="select">Select</string>
 </resources>
